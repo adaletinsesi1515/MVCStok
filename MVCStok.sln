@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStok", "MVCStok\MVCStok.csproj", "{2784D693-4830-4441-AE9B-0C34D94F7038}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2784D693-4830-4441-AE9B-0C34D94F7038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2784D693-4830-4441-AE9B-0C34D94F7038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2784D693-4830-4441-AE9B-0C34D94F7038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2784D693-4830-4441-AE9B-0C34D94F7038}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2FB446E-338D-4005-A2CD-97777F03B7C2}
+	EndGlobalSection
+EndGlobal
