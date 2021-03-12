@@ -1,0 +1,32 @@
+﻿@using MVCStok.Models.Entity
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">MÜŞTERİ ID</th>
+            <th scope="col">MÜŞTERİ ADI</th>
+            <th scope="col">MÜŞTERİ SOYADI</th>
+
+            <th scope="col">İŞLEM</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var must in Model)
+    {
+        <tr>
+            <th>@must.MUSTERIID</th>
+            <td>@must.MUSTERIAD</td>
+            <td>@must.MUSTERISOYAD</td>
+            <td>İŞLEM TÜRÜ</td>
+        </tr>
+    }
+
+    </tbody>
+</table>
+
+

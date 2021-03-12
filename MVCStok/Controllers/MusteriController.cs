@@ -7,13 +7,13 @@ using MVCStok.Models.Entity;
 
 namespace MVCStok.Controllers
 {
-    public class KategoriController : Controller
+    public class MusteriController : Controller
     {
-        // GET: Kategori
+        // GET: Musteri
         private MVCDbStokEntities db = new MVCDbStokEntities();
         public ActionResult Index()
         {
-            var degerler = db.TBLKATEGORILER.ToList();
+            var degerler = db.TBLMUSTERILER.ToList();
             return View(degerler);
         }
     }
