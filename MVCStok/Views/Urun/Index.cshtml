@@ -8,15 +8,15 @@
 
 <table class="table table-bordered">
     <thead>
-        <tr>
-            <th scope="col">ÜRÜN ID</th>
-            <th scope="col">ÜRÜN ADI</th>
-            <th scope="col">MARKA</th>
-            <th scope="col">KATEGORİSİ</th>
-            <th scope="col">FİYATI</th>
-            <th scope="col">STOK ADEDİ</th>
-            <th scope="col">İŞLEM</th>
-        </tr>
+    <tr class="text-center">
+        <th scope="col">ÜRÜN ID</th>
+        <th scope="col">ÜRÜN ADI</th>
+        <th scope="col">MARKA</th>
+        <th scope="col">KATEGORİSİ</th>
+        <th scope="col">FİYATI</th>
+        <th scope="col">STOK ADEDİ</th>
+        <th scope="col">İŞLEM</th>
+    </tr>
     </thead>
     <tbody>
     @foreach (var urun in Model)
@@ -28,9 +28,12 @@
             <td>@urun.URUNKATEGORI</td>
             <td>@urun.FIYAT</td>
             <td>@urun.STOK</td>
-            <td>İŞLEM TÜRÜ</td>
+            <td><a href="/Urun/Sil/@urun.URUNID" class="btn btn-danger">SİL</a>
+                <a href="/Urun/Guncelle/@urun.URUNID" class="btn btn-success">GÜNCELLE</a></td>
         </tr>
     }
 
     </tbody>
 </table>
+
+<a href="/Urun/Yeniurun/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
