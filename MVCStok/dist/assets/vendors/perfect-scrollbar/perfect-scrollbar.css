@@ -3,10 +3,10 @@
  */
 .ps {
   overflow: hidden !important;
-  overflow-anchor: none;
-  -ms-overflow-style: none;
-  touch-action: auto;
-  -ms-touch-action: auto;
+/*  overflow-anchor: none;
+*/  -ms-overflow-style: none;
+/*  touch-action: auto;
+*/  -ms-touch-action: auto;
 }
 
 /*

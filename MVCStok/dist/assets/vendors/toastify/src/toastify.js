@@ -149,7 +149,7 @@
 
       // Clear timeout while toast is focused
       if (this.options.stopOnFocus && this.options.duration > 0) {
-        const self = this;
+        //const self = this;
         // stop countdown
         divElement.addEventListener(
           "mouseover",

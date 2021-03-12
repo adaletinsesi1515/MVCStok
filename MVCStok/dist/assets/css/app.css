@@ -734,8 +734,8 @@ footer {
   border: 1px solid #DFE3E7;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  border-radius: 0.25rem;
+/*  appearance: none;
+*/  border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .dataTable-input:focus {
@@ -1012,9 +1012,9 @@ footer {
 .pricing .card-highlighted ul li {
   color: #fff;
 }
-.pricing .card-highlighted ul li i, .pricing .card-highlighted ul li svg {
+/*.pricing .card-highlighted ul li i, .pricing .card-highlighted ul li svg {
   color: tint-color(#28a745, 2);
-}
+}*/
 .pricing .card-highlighted .card-footer {
   background-color: #5A8DEE;
 }
