@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MVCDbStokModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MVCDbStokModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -21,6 +21,7 @@
           </Key>
           <Property Name="KATEGORIID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="KATEGORIAD" Type="varchar" MaxLength="50" />
+          <Property Name="DURUM" Type="bit" />
         </EntityType>
         <EntityType Name="TBLMUSTERILER">
           <Key>
@@ -29,6 +30,7 @@
           <Property Name="MUSTERIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MUSTERIAD" Type="varchar" MaxLength="50" />
           <Property Name="MUSTERISOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="DURUM" Type="bit" />
         </EntityType>
         <EntityType Name="TBLSATISLAR">
           <Key>
@@ -39,6 +41,7 @@
           <Property Name="MUSTERI" Type="int" />
           <Property Name="ADET" Type="tinyint" />
           <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DURUM" Type="bit" />
         </EntityType>
         <EntityType Name="TBLURUNLER">
           <Key>
@@ -50,6 +53,7 @@
           <Property Name="URUNKATEGORI" Type="smallint" />
           <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
           <Property Name="STOK" Type="tinyint" />
+          <Property Name="DURUM" Type="bit" />
         </EntityType>
         <Association Name="FK_TBLSATISLAR_TBLMUSTERILER">
           <End Role="TBLMUSTERILER" Type="Self.TBLMUSTERILER" Multiplicity="0..1" />
@@ -106,8 +110,7 @@
             <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MVCDbStokModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -128,6 +131,7 @@
           <Property Name="KATEGORIID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="KATEGORIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBLURUNLER" Relationship="Self.FK_TBLURUNLER_TBLKATEGORILER" FromRole="TBLKATEGORILER" ToRole="TBLURUNLER" />
+          <Property Name="DURUM" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBLMUSTERILER">
           <Key>
@@ -137,6 +141,7 @@
           <Property Name="MUSTERIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MUSTERISOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBLSATISLAR" Relationship="Self.FK_TBLSATISLAR_TBLMUSTERILER" FromRole="TBLMUSTERILER" ToRole="TBLSATISLAR" />
+          <Property Name="DURUM" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBLSATISLAR">
           <Key>
@@ -149,6 +154,7 @@
           <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="TBLMUSTERILER" Relationship="Self.FK_TBLSATISLAR_TBLMUSTERILER" FromRole="TBLSATISLAR" ToRole="TBLMUSTERILER" />
           <NavigationProperty Name="TBLURUNLER" Relationship="Self.FK_TBLSATISLAR_TBLURUNLER" FromRole="TBLSATISLAR" ToRole="TBLURUNLER" />
+          <Property Name="DURUM" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBLURUNLER">
           <Key>
@@ -162,6 +168,7 @@
           <Property Name="STOK" Type="Byte" />
           <NavigationProperty Name="TBLKATEGORILER" Relationship="Self.FK_TBLURUNLER_TBLKATEGORILER" FromRole="TBLURUNLER" ToRole="TBLKATEGORILER" />
           <NavigationProperty Name="TBLSATISLAR" Relationship="Self.FK_TBLSATISLAR_TBLURUNLER" FromRole="TBLURUNLER" ToRole="TBLSATISLAR" />
+          <Property Name="DURUM" Type="Boolean" />
         </EntityType>
         <Association Name="FK_TBLURUNLER_TBLKATEGORILER">
           <End Role="TBLKATEGORILER" Type="Self.TBLKATEGORILER" Multiplicity="0..1" />
@@ -238,6 +245,7 @@
           <EntitySetMapping Name="TBLKATEGORILER">
             <EntityTypeMapping TypeName="MVCDbStokModel.TBLKATEGORILER">
               <MappingFragment StoreEntitySet="TBLKATEGORILER">
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
                 <ScalarProperty Name="KATEGORIID" ColumnName="KATEGORIID" />
                 <ScalarProperty Name="KATEGORIAD" ColumnName="KATEGORIAD" />
               </MappingFragment>
@@ -246,6 +254,7 @@
           <EntitySetMapping Name="TBLMUSTERILER">
             <EntityTypeMapping TypeName="MVCDbStokModel.TBLMUSTERILER">
               <MappingFragment StoreEntitySet="TBLMUSTERILER">
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
                 <ScalarProperty Name="MUSTERIID" ColumnName="MUSTERIID" />
                 <ScalarProperty Name="MUSTERIAD" ColumnName="MUSTERIAD" />
                 <ScalarProperty Name="MUSTERISOYAD" ColumnName="MUSTERISOYAD" />
@@ -255,6 +264,7 @@
           <EntitySetMapping Name="TBLSATISLAR">
             <EntityTypeMapping TypeName="MVCDbStokModel.TBLSATISLAR">
               <MappingFragment StoreEntitySet="TBLSATISLAR">
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
                 <ScalarProperty Name="SATISID" ColumnName="SATISID" />
                 <ScalarProperty Name="URUN" ColumnName="URUN" />
                 <ScalarProperty Name="MUSTERI" ColumnName="MUSTERI" />
@@ -266,6 +276,7 @@
           <EntitySetMapping Name="TBLURUNLER">
             <EntityTypeMapping TypeName="MVCDbStokModel.TBLURUNLER">
               <MappingFragment StoreEntitySet="TBLURUNLER">
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
                 <ScalarProperty Name="URUNID" ColumnName="URUNID" />
                 <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
                 <ScalarProperty Name="MARKA" ColumnName="MARKA" />

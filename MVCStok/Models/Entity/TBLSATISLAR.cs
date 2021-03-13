@@ -19,6 +19,7 @@ namespace MVCStok.Models.Entity
         public Nullable<int> MUSTERI { get; set; }
         public Nullable<byte> ADET { get; set; }
         public Nullable<decimal> FIYAT { get; set; }
+        public Nullable<bool> DURUM { get; set; }
     
         public virtual TBLMUSTERILER TBLMUSTERILER { get; set; }
         public virtual TBLURUNLER TBLURUNLER { get; set; }

@@ -13,7 +13,7 @@ namespace MVCStok.Controllers
         // GET: Urun
         public ActionResult Index()
         {
-            var degerler = db.TBLURUNLER.ToList();
+            var degerler = db.TBLURUNLER.Where(m=>m.DURUM == true).ToList();
             return View(degerler);
         }
 
@@ -37,6 +37,14 @@ namespace MVCStok.Controllers
             p1.TBLKATEGORILER = ktg;
 
             db.TBLURUNLER.Add(p1);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Sil(int id)
+        {
+            var urun = db.TBLURUNLER.Find(id);
+            urun.DURUM = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

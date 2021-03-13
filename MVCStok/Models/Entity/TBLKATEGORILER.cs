@@ -22,6 +22,7 @@ namespace MVCStok.Models.Entity
     
         public short KATEGORIID { get; set; }
         public string KATEGORIAD { get; set; }
+        public Nullable<bool> DURUM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLURUNLER> TBLURUNLER { get; set; }

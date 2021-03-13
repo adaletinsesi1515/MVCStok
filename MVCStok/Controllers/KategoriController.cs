@@ -13,7 +13,7 @@ namespace MVCStok.Controllers
         private MVCDbStokEntities db = new MVCDbStokEntities();
         public ActionResult Index()
         {
-            var degerler = db.TBLKATEGORILER.ToList();
+            var degerler = db.TBLKATEGORILER.Where(m=>m.DURUM == true).ToList();
             return View(degerler);
         }
 
@@ -27,6 +27,14 @@ namespace MVCStok.Controllers
         public ActionResult Yenikategori(TBLKATEGORILER p1)
         {
             db.TBLKATEGORILER.Add(p1);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Sil(int id)
+        {
+            var kategori = db.TBLKATEGORILER.Find(id);
+            kategori.DURUM = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

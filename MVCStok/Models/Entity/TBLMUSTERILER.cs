@@ -23,6 +23,7 @@ namespace MVCStok.Models.Entity
         public int MUSTERIID { get; set; }
         public string MUSTERIAD { get; set; }
         public string MUSTERISOYAD { get; set; }
+        public Nullable<bool> DURUM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLSATISLAR> TBLSATISLAR { get; set; }
