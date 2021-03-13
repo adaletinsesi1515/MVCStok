@@ -16,5 +16,20 @@ namespace MVCStok.Controllers
             var degerler = db.TBLKATEGORILER.ToList();
             return View(degerler);
         }
+
+        [HttpGet]
+        public ActionResult Yenikategori()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Yenikategori(TBLKATEGORILER p1)
+        {
+            db.TBLKATEGORILER.Add(p1);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
