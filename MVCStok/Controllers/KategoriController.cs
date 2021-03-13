@@ -39,5 +39,19 @@ namespace MVCStok.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult KategoriGetir(int id)
+        {
+            var ktgr = db.TBLKATEGORILER.Find(id);
+            return View("KategoriGetir", ktgr);
+        }
+
+        public ActionResult Guncelle(TBLKATEGORILER p2)
+        {
+            var ktg = db.TBLKATEGORILER.Find(p2.KATEGORIID);
+            ktg.KATEGORIAD = p2.KATEGORIAD;
+            ktg.DURUM = true;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

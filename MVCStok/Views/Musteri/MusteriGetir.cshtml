@@ -1,0 +1,54 @@
+﻿@model MVCStok.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    <div class="col-md-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Müşteri Kayıt Güncelleme Formu</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <form class="form form-horizontal">
+                        <div class="form-body">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <label>Müşteri ID</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.MUSTERIID, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Müşteri Adı</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Müşteri Soyadı</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-sm-12 d-flex justify-content-end">
+                                    <button class="btn btn-primary mr-1 mb-1">Güncelle</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+

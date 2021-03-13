@@ -768,6 +768,8 @@
     <Content Include="Views\Kategori\Yenikategori.cshtml" />
     <Content Include="Views\Musteri\Yenimusteri.cshtml" />
     <Content Include="Views\Urun\Yeniurun.cshtml" />
+    <Content Include="Views\Kategori\KategoriGetir.cshtml" />
+    <Content Include="Views\Musteri\MusteriGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
