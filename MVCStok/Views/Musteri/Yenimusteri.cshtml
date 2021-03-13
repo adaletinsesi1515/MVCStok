@@ -1,12 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Yenikategori";
+    ViewBag.Title = "Yenimusteri";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+
+
 <div class="col-md-6 col-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Kategori Kayıt Formu</h4>
+            <h4 class="card-title">Müşteri Kayıt Formu</h4>
         </div>
         <div class="card-content">
             <div class="card-body">
@@ -14,15 +16,21 @@
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-4">
-                                <label>Kategori Adı</label>
+                                <label>Müşteri Adı</label>
                             </div>
                             <div class="col-md-8 form-group">
-                                <input type="text" id="KategoriAdi" class="form-control" name="KATEGORIAD" placeholder="Adı">
+                                <input type="text" id="MusteriAdi" class="form-control" name="MUSTERIAD" placeholder="Adı">
                             </div>
-                            
+                            <div class="col-md-4">
+                                <label>Müşteri Soyadı</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" id="MusteriSoyad" class="form-control" name="MUSTERISOYAD" placeholder="Soyadı">
+                            </div>
+                           
                             <div class="col-sm-12 d-flex justify-content-end">
                                 <button class="btn btn-primary mr-1 mb-1">Kayıt</button>
-
+                                
                             </div>
                         </div>
                     </div>
@@ -31,3 +39,5 @@
         </div>
     </div>
 </div>
+
+

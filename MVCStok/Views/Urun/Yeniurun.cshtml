@@ -1,0 +1,63 @@
+﻿@model MVCStok.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "Yeniurun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="col-md-6 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Ürün Kayıt Formu</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <form class="form form-horizontal" method="post">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Ürün Adı</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" id="UrunAdi" class="form-control" name="URUNAD" placeholder="Ürün Adı">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Markası</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" id="Markasi" class="form-control" name="MARKA" placeholder="Markası">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Kategori Seçiniz :</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                @Html.DropDownListFor(m=>m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"})
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Fiyatı</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" id="Fiyat" class="form-control" name="FIYAT" placeholder="Ürün Fiyatı">
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label>Stok Adedi</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                <input type="text" id="Stok" class="form-control" name="STOK" placeholder="Stok Adedi">
+                            </div>
+
+                            <div class="col-sm-12 d-flex justify-content-end">
+                                <button class="btn btn-primary mr-1 mb-1">Kayıt</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
