@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace MVCStok.Models.Entity
 {
     using System;
@@ -21,7 +23,13 @@ namespace MVCStok.Models.Entity
         }
     
         public int MUSTERIID { get; set; }
+
+        [Required(ErrorMessage = "Müþteri adý zorunludur...!")]
+        [StringLength(30,ErrorMessage = "En fazla 30 karakter girebilirsiniz...!")]
         public string MUSTERIAD { get; set; }
+
+        [Required(ErrorMessage = "Müþteri soyadý zorunludur...!")]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter girebilirsiniz...!")]
         public string MUSTERISOYAD { get; set; }
         public Nullable<bool> DURUM { get; set; }
     

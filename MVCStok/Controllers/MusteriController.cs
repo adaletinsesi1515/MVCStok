@@ -45,6 +45,10 @@ namespace MVCStok.Controllers
                 
             //}
 
+            if (!ModelState.IsValid)
+            {
+                return View("Yenimusteri");
+            }
             db.TBLMUSTERILER.Add(p1);
             p1.DURUM = true;
             db.SaveChanges();
