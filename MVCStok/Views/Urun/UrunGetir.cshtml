@@ -1,0 +1,79 @@
+﻿@model MVCStok.Models.Entity.TBLURUNLER
+
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div class="col-md-6 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Ürün Kayıt Güncelleme Formu</h4>
+            </div>
+            <div class="card-content"> 
+                <div class="card-body">
+                    <form class="form form-horizontal">
+                        <div class="form-body">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <label>Ürün ID</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control"})
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Ürün Adı</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Markası</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control" })
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <label>Kategorisi</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Fiyatı</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Stok Adedi</label>
+                                </div>
+                                <div class="col-md-8 form-group">
+                                    @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+                                </div>
+
+                                
+
+                                <div class="col-sm-12 d-flex justify-content-end">
+                                    <button class="btn btn-primary mr-1 mb-1">Güncelle</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
