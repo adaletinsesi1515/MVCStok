@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace MVCStok.Models.Entity
 {
     using System;
@@ -21,6 +23,8 @@ namespace MVCStok.Models.Entity
         }
     
         public short KATEGORIID { get; set; }
+        
+        [Required(ErrorMessage = "Kategori adýný giriniz...!")]
         public string KATEGORIAD { get; set; }
         public Nullable<bool> DURUM { get; set; }
     

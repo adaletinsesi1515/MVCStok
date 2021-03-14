@@ -26,7 +26,12 @@ namespace MVCStok.Controllers
         [HttpPost]
         public ActionResult Yenikategori(TBLKATEGORILER p1)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Yenikategori");
+            }
             db.TBLKATEGORILER.Add(p1);
+            p1.DURUM = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
