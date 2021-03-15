@@ -5,27 +5,28 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class="table table-bordered">
+<table id="veri" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr class="text-center">
-            <th scope="col">MÜŞTERİ ID</th>
-            <th scope="col">MÜŞTERİ ADI</th>
-            <th scope="col">MÜŞTERİ SOYADI</th>
-
-            <th scope="col">İŞLEM</th>
+            <td>MÜŞTERİ ID</td>
+            <td>MÜŞTERİ ADI</td>
+            <td>MÜŞTERİ SOYADI</td>
+            <td>İŞLEM</td>
         </tr>
     </thead>
     <tbody>
-    @foreach (var must in Model)
-    {
-        <tr>
-            <th>@must.MUSTERIID</th>
-            <td>@must.MUSTERIAD</td>
-            <td>@must.MUSTERISOYAD</td>
-            <td><a href="/Musteri/Sil/@must.MUSTERIID" class="btn btn-danger">SİL</a>
-                <a href="/Musteri/MusteriGetir/@must.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
-        </tr>
-    }
+        @foreach (var must in Model)
+        {
+            <tr>
+                <th>@must.MUSTERIID</th>
+                <td>@must.MUSTERIAD</td>
+                <td>@must.MUSTERISOYAD</td>
+                <td>
+                    <a href="/Musteri/Sil/@must.MUSTERIID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20" /></a>
+                    <a href="/Musteri/MusteriGetir/@must.MUSTERIID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20" /></a>
+                </td>
+            </tr>
+        }
 
     </tbody>
 </table>

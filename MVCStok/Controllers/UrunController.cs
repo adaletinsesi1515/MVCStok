@@ -14,7 +14,7 @@ namespace MVCStok.Controllers
         public ActionResult Index()
         {
             var degerler = db.TBLURUNLER.Where(m=>m.DURUM == true).ToList();
-            return View(degerler);
+           return View(degerler);
         }
 
         [HttpGet]

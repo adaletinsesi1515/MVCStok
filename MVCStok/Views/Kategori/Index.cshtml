@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class="table table-bordered">
+<table id="veri" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr class="text-center">
             <th scope="col">KATEGORİ ID</th>
@@ -16,13 +16,15 @@
     </thead>
     <tbody>
         @foreach (var ktgr in Model)
-        { 
-        <tr>
-            <th>@ktgr.KATEGORIID</th>
-            <td>@ktgr.KATEGORIAD</td>
-            <td><a href="/Kategori/Sil/@ktgr.KATEGORIID" class="btn btn-danger">SİL</a>
-            <a href="/Kategori/KategoriGetir/@ktgr.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
-        </tr>
+        {
+            <tr>
+                <th>@ktgr.KATEGORIID</th>
+                <td>@ktgr.KATEGORIAD</td>
+                <td>
+                    <a href="/Kategori/Sil/@ktgr.KATEGORIID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20" /></a>
+                    <a href="/Kategori/KategoriGetir/@ktgr.KATEGORIID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20" /></a>
+                </td>
+            </tr>
         }
 
     </tbody>
