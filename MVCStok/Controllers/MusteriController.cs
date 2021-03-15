@@ -5,8 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using MVCStok.Models.Entity;
-using PagedList;
-using PagedList.Mvc;
+
 
 namespace MVCStok.Controllers
 {

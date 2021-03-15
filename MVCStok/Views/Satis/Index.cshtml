@@ -1,0 +1,42 @@
+﻿@using MVCStok.Models.Entity
+@model List<TBLSATISLAR>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<a href="/Satis/YeniSatis/" class="btn btn-primary">SATIŞ YAP</a>
+<br />
+<br />
+<br />
+<table id="veri" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+    <tr>
+        <td>SATIŞ ID</td>
+        <td>ÜRÜN ADI</td>
+        <td>MÜŞTERİSİ</td>
+        <td>ADET</td>
+        <td>FİYAT</td>
+        <td>İŞLEM</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var satis in Model)
+    {
+        <tr>
+            <th>@satis.SATISID</th>
+            <td>@satis.TBLURUNLER.URUNAD</td>
+            <td>@satis.TBLMUSTERILER.MUSTERIAD @satis.TBLMUSTERILER.MUSTERISOYAD</td>
+            <td>@satis.ADET</td>
+            <td>@satis.FIYAT TL</td>
+            <td>
+                            
+                <a href="/Satis/Sil/@satis.SATISID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20"  /></a>
+                <a href="/Satis/SatisGetir/@satis.SATISID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20" /></a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

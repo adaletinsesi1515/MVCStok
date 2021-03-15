@@ -13,7 +13,7 @@ namespace MVCStok.Controllers
         // GET: Urun
         public ActionResult Index()
         {
-            var degerler = db.TBLURUNLER.Where(m=>m.DURUM == true).ToList();
+           var degerler = db.TBLURUNLER.Where(m=>m.DURUM == true).ToList();
            return View(degerler);
         }
 

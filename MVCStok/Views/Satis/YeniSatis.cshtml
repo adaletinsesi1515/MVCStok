@@ -1,0 +1,60 @@
+﻿
+@model MVCStok.Models.Entity.TBLSATISLAR
+@{
+    ViewBag.Title = "Yeniurun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="col-md-10 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Ürün Satış Formu</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <form class="form form-vertical" method="post">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Ürün Adı</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                @Html.DropDownListFor(m => m.TBLURUNLER.URUNID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Müşteri Adı Soyadı</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                @Html.DropDownListFor(m => m.TBLMUSTERILER.MUSTERIID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Adet</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                @Html.TextBoxFor(m => m.ADET, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Fiyat</label>
+                            </div>
+                            <div class="col-md-8 form-group">
+                                @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
+                            </div>
+
+
+
+
+                            <div class="col-sm-12 d-flex justify-content-end">
+                                <button class="btn btn-primary mr-1 mb-1">Satış Yap</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
