@@ -21,8 +21,14 @@
                 <th>@ktgr.KATEGORIID</th>
                 <td>@ktgr.KATEGORIAD</td>
                 <td>
-                    <a href="/Kategori/Sil/@ktgr.KATEGORIID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20" /></a>
-                    <a href="/Kategori/KategoriGetir/@ktgr.KATEGORIID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20" /></a>
+                    
+                    @*ActionLink ile alert kullanımı var burada *@
+
+                    @*@Html.ActionLink("SİL","Sil","Kategori", new { id=ktgr.KATEGORIID}, new { @class="btn btn-warning", onclick="return confirm ('Silmek istediğinizden emin misiniz??')"})*@
+
+                    <a href="/Kategori/Sil/@ktgr.KATEGORIID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20"/></a>
+
+                    <a href="/Kategori/KategoriGetir/@ktgr.KATEGORIID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20"/></a>
                 </td>
             </tr>
         }
