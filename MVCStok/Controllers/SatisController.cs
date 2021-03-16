@@ -69,6 +69,11 @@ namespace MVCStok.Controllers
             db.TBLSATISLAR.Add(p);
             p.DURUM = true;
             urun.STOK -= p.ADET;
+
+            var satisFiyat = urun.FIYAT * p.ADET;
+            p.FIYAT = satisFiyat;
+            ViewBag.satisFiyat = satisFiyat;
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

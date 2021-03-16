@@ -7,37 +7,45 @@
 }
 
 
-        <table id="veri" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-                <tr>
-                    <td>ÜRÜN ID</td>
-                    <td>ÜRÜN ADI</td>
-                    <td>MARKA</td>
-                    <td>KATEGORİSİ</td>
-                    <td>FİYATI</td>
-                    <td>STOK ADEDİ</td>
-                    <td>İŞLEM</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var urun in Model)
+<table id="veri" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <td>ÜRÜN ID</td>
+            <td>ÜRÜN ADI</td>
+            <td>MARKA</td>
+            <td>KATEGORİSİ</td>
+            <td>FİYATI</td>
+            <td>STOK ADEDİ</td>
+            <td>İŞLEM</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <th>@urun.URUNID</th>
+                <td>@urun.URUNAD</td>
+                <td>@urun.MARKA</td>
+                <td>@urun.TBLKATEGORILER.KATEGORIAD</td>
+                <td>@urun.FIYAT TL</td>
+                @if (urun.STOK <= 5)
                 {
-                    <tr>
-                        <th>@urun.URUNID</th>
-                        <td>@urun.URUNAD</td>
-                        <td>@urun.MARKA</td>
-                        <td>@urun.TBLKATEGORILER.KATEGORIAD</td>
-                        <td>@urun.FIYAT TL</td>
-                        <td>@urun.STOK</td>
-                        <td>
-                            
-                            <a href="/Urun/Sil/@urun.URUNID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20"  /></a>
-                            <a href="/Urun/UrunGetir/@urun.URUNID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20" /></a>
-                        </td>
-                    </tr>
+                    <td style="color:red">@urun.STOK</td>
                 }
-            </tbody>
-        </table>
+                else
+                {
+                    <td style="color:black">@urun.STOK</td>
+                }
+
+                <td>
+
+                    <a href="/Urun/Sil/@urun.URUNID"><img border="0" alt="sil" src="~/resim/sil.png" width="20" height="20" /></a>
+                    <a href="/Urun/UrunGetir/@urun.URUNID"><img border="0" alt="sil" src="~/resim/update.png" width="20" height="20" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 <a href="/Urun/Yeniurun/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
 
